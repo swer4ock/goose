@@ -70,7 +70,7 @@ impl OllamaProvider {
             })?;
         }
 
-        let url = base_url.join("v1/chat/completions").map_err(|e| {
+        let url = base_url.join("/api/chat").map_err(|e| {
             ProviderError::RequestFailed(format!("Failed to construct endpoint URL: {e}"))
         })?;
 
